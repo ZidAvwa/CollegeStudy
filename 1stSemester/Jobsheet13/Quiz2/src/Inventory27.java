@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class OneDimensionalArray27 {
+public class Inventory27 {
     public static void main(String[] args) {
         Scanner zs = new Scanner(System.in);
         int itemsQt[] = { 50, 30, 40, 60, 20 };
