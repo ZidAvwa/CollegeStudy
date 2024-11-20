@@ -1,9 +1,12 @@
 import java.util.Scanner;
-public class CinemaSeating27 {
+public class EnhancedCinemaSeating27 {
     public static void main(String[] args) {
         Scanner zs = new Scanner(System.in);
         int row, column, action;
         boolean isRun = true;
+        int bookedSeats = 0;
+        int earnings = 0;
+        int prices, vipPrice = 20, regularPrice = 15, economyPrice = 10;
         int audience[][] = {
             { 0, 0, 0, 0, 0 },
             { 0, 0, 0, 0, 0 },
@@ -21,7 +24,10 @@ public class CinemaSeating27 {
                 }
                 System.out.println();
             }
-
+            int availableSeats = audience.length * audience[0].length - bookedSeats;
+            System.out.println("Total Booked Seats: " + bookedSeats);
+            System.out.println("Total Available Seats: " + availableSeats);
+            System.out.println("Total Earnings : $" + earnings);
             System.out.println("\nMenu: ");
             System.out.println("1. Book a seat");
             System.out.println("2. Cancel a booking");
@@ -38,10 +44,22 @@ public class CinemaSeating27 {
                     column = zs.nextInt();
                     zs.nextLine();
 
-                    if (row >= 0 && row < 5 && column >= 0 && column < 5) { // if correct seat location
+                    if (row >= 0 && row < 5 && column >= 0 && column < 5) {
                         if (audience[row][column] == 0) { // if seat are not occupied
                             audience[row][column] = 1;
-                            System.out.println("Seat successfully booked.");
+                            bookedSeats++; // Booked seat counter
+
+                            if (row <= 1) {
+                                prices = vipPrice; // Row 0 and 1 for VIP
+                            } 
+                            else if (row <= 3) {
+                                prices = regularPrice; // Row 2 and 3 for Regular
+                            } 
+                            else {
+                                prices = economyPrice; // Row 4 for Economy
+                            }
+                            earnings += prices; // Increase the earning value
+                            System.out.println("Seat successfully booked. Price: $" + prices);
                         } 
                         else { // if selected seat are occupied
                             System.out.println("Seat already booked. Please choose a different seat.");
@@ -59,9 +77,21 @@ public class CinemaSeating27 {
                     column = zs.nextInt();
                     zs.nextLine();
 
-                    if (row >= 0 && row < 5 && column >= 0 && column < 5) {
+                    if (row >= 0 && row < 5 && column >= 0 && column < 5) { // if correct seat location
                         if (audience[row][column] == 1) { // if selected seat are occupied
                             audience[row][column] = 0; 
+                            bookedSeats--; // Booked seat counter
+
+                            if (row <= 1) {
+                                prices = vipPrice; // Row 0 and 1 for VIP
+                            } 
+                            else if (row <= 3) {
+                                prices = regularPrice; // Row 2 and 3 for Regular
+                            } 
+                            else {
+                                prices = economyPrice; // Row 4 for Economy
+                            }
+                            earnings -= prices; // Decrease the earnings after deleting
                             System.out.println("Booking successfully cancelled.");
                         } 
                         else { // if seat are not occupied
