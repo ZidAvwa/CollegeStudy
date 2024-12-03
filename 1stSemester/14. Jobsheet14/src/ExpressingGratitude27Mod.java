@@ -4,12 +4,14 @@ public class ExpressingGratitude27Mod {
         Scanner input = new Scanner(System.in);
         System.out.print("Input the name of people you want to greet: ");
         String recipientName = input.nextLine();
+        input.close();
         return recipientName;
     }
     public static String sayAdditionalGreetings(){
         Scanner input = new Scanner(System.in);
         System.out.print("Input your additonal greeting: ");
         String expression = input.nextLine();
+        input.close();
         return expression;
     }
     public static void sayThankyou(){
