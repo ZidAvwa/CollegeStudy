@@ -1,13 +1,14 @@
 import java.util.Scanner;
 
 public class CafeOrderManager {
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         Scanner zs = new Scanner(System.in);
         String[][] orders = new String[100][10];
         int[][] prices = new int[100][10]; // Array to store prices for each order
         String[] customerNames = new String[100];
+        
         while (true) {
-            System.out.println("\n=====MENU UTAMA=====");
+            System.out.println("\n===== MENU UTAMA =====");
             System.out.println("1. Tambahkan Pesanan");
             System.out.println("2. Tampilkan Daftar Pesanan");
             System.out.println("3. Keluar");
@@ -17,7 +18,8 @@ public class CafeOrderManager {
             if (input.matches("-?\\d+")) {
                 menu = Integer.parseInt(input); // Convert the string to an integer
             } else {
-                System.out.println("Invalid input. Please enter a valid number.");
+                System.out.println("Input tidak valid. Harap masukkan angka.");
+                continue;
             }
 
             switch (menu) {
@@ -28,8 +30,11 @@ public class CafeOrderManager {
                     daftarPesanan(orders, prices, customerNames);
                     break;
                 case 3:
-                    return;
+                    System.out.println("Terima kasih telah menggunakan sistem pemesanan kafe!");
+                    zs.close();
+                    return; // Exit the program
                 default:
+                    System.out.println("Menu tidak valid. Silakan pilih lagi.");
                     break;
             }
         }
@@ -38,9 +43,17 @@ public class CafeOrderManager {
     public static void menuKafe(Scanner zs, String[][] nama, int[][] prices, String[] customerNames, int nomorMeja) {
         System.out.print("Masukkan nama pelanggan: ");
         String inputNama = zs.nextLine(); // Store customer name for the table
+
         System.out.print("Masukkan nomor meja: ");
-        nomorMeja = zs.nextInt();
+        nomorMeja = zs.nextInt() - 1; // Convert to 0-based index
+        zs.nextLine(); // Consume newline
+        if (nomorMeja < 0 || nomorMeja >= nama.length) {
+            System.out.println("Nomor meja tidak valid. Harap masukkan nomor antara 1 dan 100.");
+            return;
+        }
+
         customerNames[nomorMeja] = inputNama;
+
         System.out.println("\n===== MENU KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15000");
         System.out.println("2. Latte - Rp 22000");
@@ -124,13 +137,10 @@ public class CafeOrderManager {
                     }
                 }
                 System.out.println("Total Harga Pesanan: Rp " + totalHarga);
-                System.out.println("--------------------------------------");
             }
         }
         if (!hasOrders) {
             System.out.println("Tidak ada pesanan di semua meja.");
         }
     }
-
-    
 }
