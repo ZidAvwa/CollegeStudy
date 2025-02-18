@@ -1,7 +1,7 @@
 |  | Algorithm and Data Structure |
 |--|--|
-| NIM |  1234567|
-| Nama |  You know who |
+| NIM |  244107020083|
+| Nama |  Zid'Avwa Al Bari'i |
 | Kelas | TI - 1I |
 | Repository | [link] (https://github.com/ZidAvwa/CollegeStudy/tree/main/2ndSemester) |
 
