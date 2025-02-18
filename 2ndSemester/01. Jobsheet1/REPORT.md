@@ -66,8 +66,8 @@ The solution is implemented in VehiclePlate.java, and below is screenshot of the
 
 ![Screenshot](img/VehiclePlate.png)
 
-**Brief explanaton:** There are 4 main step: 
-1. predefine each cities codes
+**Brief explanaton:** There are 5 main step: 
+1. predefine each cities name and codes
 2. input the code
 3. check which index does the code belongs by looping through the array
 4. check the city name by using the index we get
@@ -80,5 +80,24 @@ The solution is implemented in CubeCalculator.java, and below is screenshot of t
 ![Screenshot](img/CubeCalculator.png)
 
 **Brief explanaton:** There are 4 main step: 
-1. COMING SOON
+1. first the code ask for cube edge length input
+2. then ask the action user want to take
+3. call the function according the user input
+4. running the code inside the function 
 
+## 3.3 Assignment 3
+
+The solution is implemented in College.java, and below is screenshot of the result.
+
+![Screenshot](img/College1.png)
+![Screenshot](img/College2.png)
+
+**Brief explanaton:** There are 4 main step: 
+1. ask user how many course they want to add
+2. display the menu
+3. if user pick 1 
+4. call the function (then ask the couse name, sks, semester and day) 
+5. if user pick 2
+6. call the function (display all the arrays) 
+7. if user pick 3
+8. call the function (find day name using for loop then display all the corresponding arrays) 
