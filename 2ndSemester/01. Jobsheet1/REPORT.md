@@ -92,7 +92,7 @@ The solution is implemented in College.java, and below is screenshot of the resu
 ![Screenshot](img/College1.png)
 ![Screenshot](img/College2.png)
 
-**Brief explanaton:** There are 4 main step: 
+**Brief explanaton:** There are 8 main step: 
 1. ask user how many course they want to add
 2. display the menu
 3. if user pick 1 

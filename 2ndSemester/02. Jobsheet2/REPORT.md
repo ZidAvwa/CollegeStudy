@@ -4,14 +4,14 @@
 | Nama |  Zid'Avwa Al Bari'i |
 | Kelas | TI - 1I |
 | Repository | [link] (https://github.com/ZidAvwa/CollegeStudy/tree/main/2ndSemester) |
-#COMING SOON
-# Labs #2 Programming Fundamentals Review
+# COMING SOON
+# Labs #2 ...
 
-## 2.1.1. Selection Solution
+## 2.1.1. ... Solution
 
-The solution is implemented in Selection.java, and below is screenshot of the result.
+The solution is implemented in ....java, and below is screenshot of the result.
 
-![Screenshot](img/Selection.png)
+![Screenshot](img/....png)
 
 **Brief explanaton:** There are 4 main step: 
 1. 
