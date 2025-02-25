@@ -14,6 +14,7 @@ public class StudentMain27 {
         student2.updateGPA(3.3);
         student2.print();
 
-        Student27 student3 = new Student27("244107020083", "Zid", "TI-1I", 3.8);
+        Student27 studentZid = new Student27("244107020083", "Zid", "TI-1I", 3.8);
+        studentZid.print();
     }
 }

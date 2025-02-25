@@ -13,9 +13,14 @@ public class Student27 {
         className = newClass;
     }
 
-    void updateGPA(double newGPA){
-        gpa = newGPA;
+    void updateGPA(double newGPA) {
+        if (newGPA >= 0.0 && newGPA <= 4.0) {
+            gpa = newGPA;
+        } else {
+            System.out.println("Invalid IPK. Must be between 0.0 and 4.0.");
+        }
     }
+    
 
     String evaluate(){
         if (gpa >= 3.5) return "Excellent";
