@@ -45,12 +45,15 @@ The lab is implemented in ArrayBlocks27.java and Blocks27.java
 The lab is implemented in Lecturer27.java, LecturerDemo27.java and LecturerDemo27.java
 
 **Lecturer:**
+
 ![Screenshot](img/Lecturer.png)
 
 **LecturerDemo:**
+
 ![Screenshot](img/LecturerDemo.png)
 
 **LecturerData:**
+
 ![Screenshot](img/LecturerData.png)
 
 ![Screenshot](img/Assignment.png)
