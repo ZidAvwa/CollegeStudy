@@ -9,7 +9,7 @@
 i answer the questions after doing the codes, my answers might differ
 ## 2.1. Declare Classes, Attributes and Methods
 
-The solution is implemented in Student27.java, and below is screenshot of the result.
+The solution is implemented in Student27.java
 
 **Questions:**
 1. thow characteristics of a class or object
@@ -39,7 +39,7 @@ The solution is implemented in Student27.java, and below is screenshot of the re
 
 ## 2.2. Object Instatiation and Acessing Attributes and Methods
 
-The solution is implemented in StudentMain27.java, and below is screenshot of the result.
+The solution is implemented in StudentMain27.java
 
 **Questions**
 1. Student27 student1 = new Student27();
@@ -49,7 +49,7 @@ The solution is implemented in StudentMain27.java, and below is screenshot of th
 
 ## 2.3. Creating a Constructor
 
-The solution is implemented in StudentMain27.java, and below is screenshot of the result.
+The solution is implemented in StudentMain27.java
 
 **Questions**
 1. public Student27(String id, String name, String cls, double gpa) {
@@ -70,7 +70,7 @@ The solution is implemented in StudentMain27.java, and below is screenshot of th
 
 ## 2.4. Assignment 1
 
-The solution is implemented in Course27.java and CourseMain27, and below is screenshot of the result.
+The solution is implemented in Course27.java and CourseMain27
 
 **Class Code**
 
@@ -86,7 +86,7 @@ The solution is implemented in Course27.java and CourseMain27, and below is scre
 
 ## 2.4. Assignment 2
 
-The solution is implemented in Lecturer27.java and LecturerMain27, and below is screenshot of the result.
+The solution is implemented in Lecturer27.java and LecturerMain27
 
 **Class Code**
 
