@@ -5,7 +5,7 @@
 | Kelas | TI - 1I |
 | Repository | [link] (https://github.com/ZidAvwa/CollegeStudy/tree/main/2ndSemester) |
 
-# Labs #5 Array of Object
+# Labs #5
 
 ## 5.2. Calculating Factorial Using Brute Force and Divide and Conquer Algorithms
 
@@ -62,4 +62,14 @@ The lab is implemented in Sum27.java and SumMain27.java
 5. totalDC() applies Divide and Conquer by splitting the array, summing recursively, and combining results efficiently.
 
 ## 5.5. Assignment
+
+The Assignment is implemented in ScoreAnalysis27.java and ScoreMain27.java
+
+**ScoreAnalysis27.java :**
+
+![Screenshot](img/ScoreAnalysis27.png)
+
+**ScoreAnalysis27.java :**
+
+![Screenshot](img/ScoreMain27.png)
 
