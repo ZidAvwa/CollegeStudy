@@ -9,7 +9,8 @@ public class Sum27 {
         double total = 0;
         for (int i = 0; i < profits.length; i++) {
             total = total + profits[i];
-        }return total;
+        }
+        return total;
     }
 
     double totalDC(double arr[], int l, int r){

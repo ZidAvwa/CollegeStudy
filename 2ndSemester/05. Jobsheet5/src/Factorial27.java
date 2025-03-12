@@ -7,8 +7,8 @@ public class Factorial27 {
         return facto;
     }
     int factorialDC(int n){
-        if (n == 1) { return 1;
-        }else{
+        if (n == 1) return 1;
+        else{
             int facto = n * factorialDC(n - 1);
             return facto;
         }
