@@ -1,0 +1,8 @@
+0 Ferro
+1 nonFerro
+2 daun
+3 plastikY
+4 plastikR
+5 plastikB
+6 kertasW
+7 kertasC
