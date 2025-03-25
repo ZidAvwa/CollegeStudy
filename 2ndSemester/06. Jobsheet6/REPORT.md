@@ -5,7 +5,7 @@
 | Kelas | TI - 1I |
 | Repository | [link] (https://github.com/ZidAvwa/CollegeStudy/tree/main/2ndSemester) |
 
-# Labs #5
+# Labs #6
 
 ## 6.2. Experiment 1 - Implementing Sorting Using Objects
 
