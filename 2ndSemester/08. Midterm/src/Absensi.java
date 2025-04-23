@@ -15,25 +15,32 @@ public class Absensi {
         this.alpa = alpa;
     }
 
+    public int totalPertemuan(){
+        return hadir + sakit + izin + alpa;
+    }
     public double hitungPersentaseKehadiran() {
-        int totalPertemuan = hadir + sakit + izin + alpa;
-        if (totalPertemuan == 0) {
+        int totPertemuan = totalPertemuan();
+        if (totPertemuan == 0) {
             return 0.0;
         }
-        return (double) hadir / totalPertemuan * 100;
+        return (double) hadir / totPertemuan * 100;
     }
 
     public void tampilData() {
-        System.out.println("Mahasiswa: " + mahasiswa.namaMahasiswa);
-        System.out.println("NIM: " + mahasiswa.nim);
+        System.out.println("NIM: " + mahasiswa.nim + " | Nama: " + mahasiswa.namaMahasiswa);
         System.out.println("Mata Kuliah: " + mataKuliah.namaMK);
-        System.out.println("Kode MK: " + mataKuliah.kodeMK);
-        System.out.println("SKS: " + mataKuliah.sks);
-        System.out.println("Hadir: " + hadir);
-        System.out.println("Sakit: " + sakit);
-        System.out.println("Izin: " + izin);
-        System.out.println("Alpa: " + alpa);
-        System.out.println("Persentase Kehadiran: " + String.format("%.2f", hitungPersentaseKehadiran()) + "%");
-        System.out.println("----------------------------------------");
+        System.out.printf("Hadir: %d | Sakit: %d | Izin: %d | Alpa: %d%n",
+                hadir, sakit, izin, alpa);
+        System.out.printf("Persentase Kehadiran: %.2f%%%n", hitungPersentaseKehadiran());
+        System.out.println();
+    }
+
+    public void cariData(){
+        System.out.println("NIM: " + mahasiswa.nim + " | Nama: " + mahasiswa.namaMahasiswa);
+        System.out.println("Mata Kuliah: " + mataKuliah.namaMK);
+        System.out.printf("Hadir: %d | Sakit: %d | Izin: %d | Alpa: %d%n",
+                hadir, sakit, izin, alpa);
+        System.out.printf("Persentase Kehadiran: %.2f%%%n", hitungPersentaseKehadiran());
+        System.out.println();
     }
 }

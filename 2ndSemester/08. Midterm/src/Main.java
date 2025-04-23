@@ -36,6 +36,7 @@ public class Main {
             System.out.println("3. Tampilkan Data Absensi");
             System.out.println("4. Urutkan Berdasarkan Persentase Kehadiran (Desc)");
             System.out.println("5. Cari Data Absensi Berdasarkan NIM");
+            System.out.println("6. Rangkuman Kehasiran Per-Mata Kuliah");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             choice = scanner.nextInt();
@@ -51,18 +52,13 @@ public class Main {
                 case 2 -> {
                     System.out.println("=== DATA MATA KULIAH ===");
                     for (MataKuliah mk : mataKuliahList) {
-                        System.out.println("Kode MK: " + mk.kodeMK + " | Nama: " + mk.namaMK + " | SKS: " + mk.sks);
+                        mk.tampilData();
                     }
                 }
                 case 3 -> {
                     System.out.println("=== DATA ABSENSI MAHASISWA ===");
                     for (Absensi abs : absensiList) {
-                        System.out.println("NIM: " + abs.mahasiswa.nim + " | Nama: " + abs.mahasiswa.namaMahasiswa);
-                        System.out.println("Mata Kuliah: " + abs.mataKuliah.namaMK);
-                        System.out.printf("Hadir: %d | Sakit: %d | Izin: %d | Alpa: %d%n",
-                                abs.hadir, abs.sakit, abs.izin, abs.alpa);
-                        System.out.printf("Persentase Kehadiran: %.2f%%%n", abs.hitungPersentaseKehadiran());
-                        System.out.println();
+                        abs.tampilData();
                     }
                 }
                 case 4 -> {
@@ -92,12 +88,7 @@ public class Main {
                     System.out.println("=== HASIL PENCARIAN ABSENSI MAHASISWA ===");
                     for (Absensi abs : absensiList) {
                         if (abs.mahasiswa.nim.equals(inputNIM)) {
-                            System.out.println("NIM: " + abs.mahasiswa.nim + " | Nama: " + abs.mahasiswa.namaMahasiswa);
-                            System.out.println("Mata Kuliah: " + abs.mataKuliah.namaMK);
-                            System.out.printf("Hadir: %d | Sakit: %d | Izin: %d | Alpa: %d%n",
-                                    abs.hadir, abs.sakit, abs.izin, abs.alpa);
-                            System.out.printf("Persentase Kehadiran: %.2f%%%n", abs.hitungPersentaseKehadiran());
-                            System.out.println();
+                            abs.cariData();
                             found = true;
                         }
                     }
@@ -105,6 +96,28 @@ public class Main {
                         System.out.println("Data absensi untuk NIM \"" + inputNIM + "\" tidak ditemukan.");
                     }
                 }
+                case 6 -> {
+                    System.out.println("=== RANGKUMAN KEHADIRAN PER-MATA KULIAH ===");
+                    for (MataKuliah mk : mataKuliahList) {
+                        int totalHadir = 0;
+                        int totalPertemuan = 0;
+                        for (Absensi abs : absensiList) {
+                            if (abs.mataKuliah == mk) {
+                                totalHadir += abs.hadir;
+                                totalPertemuan += abs.totalPertemuan();
+                            }
+                        }
+                        double rataRataKehadiran = totalPertemuan > 0 ? (double) totalHadir / totalPertemuan * 100 : 0;
+                        int mahasiswaTidakLulus = 0;
+                        for (Absensi abs : absensiList) {
+                            if (abs.mataKuliah.equals(mk) && abs.hitungPersentaseKehadiran() < 75) {
+                                mahasiswaTidakLulus++;
+                            }
+                        }
+                        System.out.printf("Mata Kuliah \t\t: %s \nRata-rata Kehadiran \t: %.2f%% \nMahasiswa Tidak Lulus \t: %d%n \n", 
+                                mk.namaMK, rataRataKehadiran, mahasiswaTidakLulus);
+                    }
+                } 
                 case 0 -> System.out.println("Program selesai.");
                 default -> System.out.println("Pilihan tidak valid.");
             }

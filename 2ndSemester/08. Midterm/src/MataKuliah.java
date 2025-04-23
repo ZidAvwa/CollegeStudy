@@ -10,8 +10,6 @@ public class MataKuliah {
     }
 
     public void tampilData() {
-        System.out.println("Kode MK: " + kodeMK);
-        System.out.println("Nama MK: " + namaMK);
-        System.out.println("SKS: " + sks);
+        System.out.println("Kode MK: " + kodeMK + " | Nama: " + namaMK + " | SKS: " + sks);
     }
 }
