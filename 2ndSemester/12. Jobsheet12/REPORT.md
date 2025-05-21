@@ -7,7 +7,7 @@
 
 # Labs #12 Linked List
 
-## 12.1 Experiment 1 : Queue Basic Operations
+## 12.1 Experiment 1: Implementing Single Linked List
 
 The lab is implemented in SingleLinkedList.java, Student27.java, Node.java, and MainLinkedList27.java
 
@@ -17,7 +17,7 @@ The lab is implemented in SingleLinkedList.java, Student27.java, Node.java, and 
 3. Use a Scanner object in main() to input student details, create a Student object, and add it to the list.
 4. Operations like addLast() would require traversing the entire list to find the last node, making the operation less efficient (O(n) instead of O(1)).
 
-## 12.2 Experiment 2 : Academic Service Queue
+## 12.2 Experiment 2: Accessing Element in Single Linked List
 
 The lab is implemented in SingleLinkedList.java, Student27.java, Node.java, and MainLinkedList27.java
 
