@@ -92,30 +92,32 @@ The lab is implemented in DoubleLinkedLists.java, Student.java, Node.java, and D
 The Assignment is implemented in Student.java, Node.java, DoubleLinkedLists.java, and DoubleLinkedListsMain.java
 
 1. Add an add() function to the DoubleLinkedList class to insert a node at a specific index. 
-**Modification of DoubleLinkedLists.java at lines A - B**
+**Modification of DoubleLinkedLists.java at lines 106 - 128**
 
-    ![Screenshot](img/A.png)
+    ![Screenshot](img/1.png)
 
 2. Add a removeAfter() function to the DoubleLinkedList class to delete the node that comes after the node containing a specified key.
-**Modification of DoubleLinkedLists.java at lines A - B**
+**Modification of DoubleLinkedLists.java at lines 130 - 146**
     
-    ![Screenshot](img/A.png)
+    ![Screenshot](img/2.png)
 
 3. Add the methods getFirst(), getLast(), and getIndex() to retrieve data from the head node, tail node, and node at a specific index, respectively.
-**Modification of DoubleLinkedLists.java at lines A - B**
+**Modification of DoubleLinkedLists.java at lines 148 - 164**
 
-    ![Screenshot](img/A.png)
+    ![Screenshot](img/3.png)
 
 4. Add a method getSize() to return the number of DoubleLinkedLists data!
-**Modification of DoubleLinkedLists.java at lines A - B**
+**Modification of DoubleLinkedLists.java at lines 166 - 174**
 
-    ![Screenshot](img/A.png)
+    ![Screenshot](img/4.png)
 
 5. Add method indexOf() to return the index of a specific data specified by key (nim)!
-**Modification of DoubleLinkedLists.java at lines A - B**
+**Modification of DoubleLinkedLists.java at lines 176 - 187**
 
-    ![Screenshot](img/A.png)
+    ![Screenshot](img/5.png)
 
-**Modification of DoubleLinkedListsMain.java at lines A - B to run the Modifications**
+**Modification of DoubleLinkedListsMain.java to run the Modifications**
 
-![Screenshot](img/A.png)
+![Screenshot](img/main.png)
+
+i change the whole main so it can be easier to observe.
