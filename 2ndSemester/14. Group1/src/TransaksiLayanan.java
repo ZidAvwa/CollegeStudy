@@ -1,11 +1,8 @@
-import java.util.ArrayList; //UAS
 import java.util.Scanner;
 
 public class TransaksiLayanan {
     private static LinkedList.PasienLinkedList antrianPasien = new LinkedList.PasienLinkedList();
-    private static QueueTransaksi riwayatTransaksi = new QueueTransaksi();
-
-    private static ArrayList<Pasien> subAntrianList = new ArrayList<>(); //UAS
+    private static LinkedList.TransaksiLinkedList riwayatTransaksi = new LinkedList.TransaksiLinkedList();
 
     Pasien pasien;
     Dokter dokter;
@@ -69,7 +66,7 @@ public class TransaksiLayanan {
 
         Dokter dokter = new Dokter(idDokter, namaDokter);
         TransaksiLayanan transaksi = new TransaksiLayanan(pasien, dokter, durasi);
-        riwayatTransaksi.addTransaction(transaksi);
+        riwayatTransaksi.add(transaksi);
 
         System.out.println(">> Pasien berhasil dilayani dan transaksi dicatat.");
     }
@@ -79,35 +76,10 @@ public class TransaksiLayanan {
     }
 
     public static void lihatRiwayat() {
-        riwayatTransaksi.printTransactions();
-    }
-
-    public static void tampilkanAntrian(Scanner scanner) { // UAS
-        System.out.print("Masukkan indeks awal: ");
-        int awal = scanner.nextInt();
-        System.out.print("Masukkan indeks akhir: ");
-        int akhir = scanner.nextInt();
-        scanner.nextLine();
-
-        if (awal < 1 || akhir > antrianPasien.size() || awal > akhir) {
-            System.out.println("Indeks tidak valid.");
-            return;
-        }
-        for (int i = awal - 1; i < akhir; i++) {
-            if (i < antrianPasien.size()) {
-                subAntrianList.add(antrianPasien.get(i));
-            }
-        }
-
-        if (subAntrianList.isEmpty()) {
-            System.out.println("Tidak ada pasien dalam rentang indeks tersebut.");
+        if (riwayatTransaksi.isEmpty()) {
+            System.out.println(">> Belum ada transaksi.");
         } else {
-            System.out.println("-- Antrian Pasien dari Indeks " + awal + " hingga " + akhir + " --");
-            for (Pasien pasien : subAntrianList) {
-                pasien.tampilkanInformasi();
-            }
+            riwayatTransaksi.printAll();
         }
     }
-
-    
 }

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class QueueTransaksi {
     ArrayList<TransaksiLayanan> transaksiList = new ArrayList<>();
-    
+
     public void addTransaction(TransaksiLayanan transaksi) {
         transaksiList.add(transaksi);
     }

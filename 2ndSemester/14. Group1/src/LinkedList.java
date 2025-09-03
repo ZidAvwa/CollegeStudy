@@ -52,20 +52,41 @@ public class LinkedList {
                 current = current.next;
             }
         }
+    }
 
-        public Pasien get(int index) { // UAS
-            Node current = head;
-            int count = 0;
+    static class TransaksiNode {
+        TransaksiLayanan data;
+        TransaksiNode next;
+
+        public TransaksiNode(TransaksiLayanan data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    public static class TransaksiLinkedList {
+        TransaksiNode head, tail;
+
+        public void add(TransaksiLayanan transaksi) {
+            TransaksiNode newNode = new TransaksiNode(transaksi);
+            if (tail == null) {
+                head = tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
+        }
+
+        public boolean isEmpty() {
+            return head == null;
+        }
+
+        public void printAll() {
+            TransaksiNode current = head;
             while (current != null) {
-                if (count == index) {
-                    return current.data;
-                }
-                count++;
+                current.data.tampilkanTransaksi();
                 current = current.next;
             }
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size());
         }
     }
 }
-
-

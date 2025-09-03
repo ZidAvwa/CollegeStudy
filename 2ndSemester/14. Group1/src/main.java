@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String pilihan;
@@ -12,7 +12,6 @@ public class Main {
             System.out.println("3. Layani Pasien");
             System.out.println("4. Cek Sisa Antrian");
             System.out.println("5. Lihat Riwayat Transaksi");
-            System.out.println("6. Tampilkan Antrian no A - B");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             pilihan = scanner.nextLine();
@@ -23,7 +22,6 @@ public class Main {
                 case "3" -> TransaksiLayanan.layaniPasien(scanner);
                 case "4" -> TransaksiLayanan.cekSisaAntrian();
                 case "5" -> TransaksiLayanan.lihatRiwayat();
-                case "6" -> TransaksiLayanan.tampilkanAntrian(scanner); // UAS
                 case "0" -> System.out.println("Terima kasih telah menggunakan sistem.");
                 default -> System.out.println("Pilihan tidak valid.");
             }
