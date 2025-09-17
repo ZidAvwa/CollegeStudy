@@ -1,0 +1,25 @@
+@startuml
+
+class Engine {
+    - capacity : int
+    - fuelType : String
+    + getCapacity() : int
+    + setCapacity(capacity : int) : void
+    + getFuelType() : String
+    + setFuelType(fuelType : String) : void
+}
+
+class Motorcycle {
+    - brand : String
+    - color : String
+    - maxSpeed : int
+    - engine : Engine
+    + getBrand() : String
+    + setBrand(brand : String) : void
+    + increaseSpeed() : void
+    + decreaseSpeed() : void
+}
+
+Motorcycle --> Engine
+
+@enduml
