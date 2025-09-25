@@ -1,0 +1,31 @@
+@startuml
+class Library {
+  - name: String
+  - books: List<Book>
+  + addBook(book: Book)
+  + listBooks()
+}
+
+class Book {
+  - title: String
+  - author: Author
+  - isBorrowed: boolean
+  + borrow()
+  + returnBook()
+}
+
+class Author {
+  - name: String
+}
+
+class Member {
+  - name: String
+  - borrowed: List<Book>
+  + borrowBook(book: Book)
+  + returnBook(book: Book)
+}
+
+Library "1" o-- "*" Book
+Book "1" -- "1" Author
+Member "1" -- "*" Book : borrows >
+@enduml
