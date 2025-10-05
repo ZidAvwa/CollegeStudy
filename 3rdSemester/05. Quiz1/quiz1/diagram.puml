@@ -1,0 +1,46 @@
+@startuml
+
+class AirConditioner {
+    - Brand : String
+    - ProductionYear : int
+    - MainCompressor : Compressor
+    - MainRemote : Remote
+    + AirConditioner(brand, yearprod, comp, rmt)
+    + getBrand() : String
+    + getProductionYear() : int
+    + getMainCompressor() : Compressor
+    + getMainRemote() : Remote
+    + setBrand(Brand)
+    + setProductionYear(ProductionYear)
+    + setMainCompressor(MainCompressor)
+    + setMainRemote(MainRemote)
+}
+
+class Compressor {
+    - Type : String
+    - Capacity : int
+    + Compressor(Type, Capacity)
+    + getType() : String
+    + getCapacity() : int
+    + setType(Type)
+    + setCapacity(Capacity)
+}
+
+class Remote {
+    - Language : String
+    - BatteryNumber : int
+    + Remote(lang, battnum)
+    + getLanguage() : String
+    + getBatteryNumber() : int
+    + setLanguage(Language)
+    + setBatteryNumber(BatteryNumber)
+}
+
+class ACMain {
+    + main(args : String[])
+}
+
+AirConditioner "1" o-- "1" Compressor : MainCompressor
+AirConditioner "1" o-- "1" Remote : MainRemote
+
+@enduml
