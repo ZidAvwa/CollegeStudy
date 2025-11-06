@@ -1,0 +1,56 @@
+@startuml
+
+abstract class Binatang {
+  # nama: String
+  # jmlKaki: int
+  + Binatang(nama: String, jmlKaki: int)
+  + setNama(nama: String): void
+  + getNama(): String
+  + getKaki(): int
+  + {abstract} displayBinatang(): void
+}
+
+interface IKarnivora {
+  + displayMakan(): void
+}
+
+interface IHerbivora {
+  + displayMakan(): void
+}
+
+class Singa {
+  - suara: String
+  - warnaBulu: String
+  + Singa(nama: String, jmlKaki: int, suara: String, warnaBulu: String)
+  + displayMakan(): void
+  + displayBinatang(): void
+  + displayData(): void
+}
+
+class Gorilla {
+  - suara: String
+  - warnaBulu: String
+  + Gorilla(nama: String, jmlKaki: int, suara: String, warnaBulu: String)
+  + displayMakan(): void
+  + displayBinatang(): void
+  + displayData(): void
+}
+
+class Keledai {
+  - suara: String
+  - warnaBulu: String
+  + Keledai(nama: String, jmlKaki: int, suara: String, warnaBulu: String)
+  + displayMakan(): void
+  + displayBinatang(): void
+  + displayData(): void
+}
+
+Binatang <|-- Singa
+Binatang <|-- Gorilla
+Binatang <|-- Keledai
+IKarnivora <|.. Singa
+IKarnivora <|.. Gorilla
+IHerbivora <|.. Gorilla
+IHerbivora <|.. Keledai
+
+@enduml
