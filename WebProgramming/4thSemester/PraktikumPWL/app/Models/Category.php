@@ -14,4 +14,9 @@ class Category extends Model
 
     public $timestamps = false;
     // protected $primaryKey = 'id';
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }

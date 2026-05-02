@@ -14,8 +14,6 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Group;
 
-
-
 class PostForm
 {
     public static function configure(Schema $schema): Schema
@@ -38,6 +36,7 @@ class PostForm
                                 ]),
                             Select::make('category_id')
                                 ->label('Category')
+                                ->relationship('category','name')
                                 ->options(
                                     \App\Models\Category::all()->pluck('name', 'id')
                                 )
@@ -45,7 +44,7 @@ class PostForm
                                 ->validationMessages([
                                     'required' => 'You need to pick the Category.',
                                 ])
-                                ->preload()
+                                // ->preload()
                                 ->searchable(),
                             ColorPicker::make('color'),
                         ])->columns(2),
@@ -59,7 +58,11 @@ class PostForm
                             ->directory("post"),
                     ]),
                     Section::make('Meta Information')->icon('heroicon-o-bookmark')->schema([
-                        TagsInput::make('tags'),
+                        // TagsInput::make('tags'),
+                        Select::make('tags')
+                            ->relationship('tags','name')
+                            ->multiple()
+                            ->preload(),
                         Checkbox::make('published'),
                     ]),
                     DateTimePicker::make('published_at'),
